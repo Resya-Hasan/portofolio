@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     colors: {
-      background: "#F6F6F6",
+      light: "#F6F6F6",
       surface: "#FFFFFF",
 
       primary: "#151514",
