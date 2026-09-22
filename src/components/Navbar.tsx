@@ -27,11 +27,11 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`bg-none p-4 fixed top-0 left-0 w-full z-50 bg-gray-800 transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
+        <nav className={`bg-none px-10 xl:px-32 2xl:px-96 py-4 fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
 
-            <div className="container mx-auto flex items-center justify-between">
-                <div className="display flex items-center font-bold gap-2 md:gap-3 shadow-xl rounded-full px-2 md:px-3 py-1 md:py-2 border-2 border-border text-[12px] md:text-base/6">
-                    <div className="w-2 h-2 md:w-4 md:h-4 rounded-full bg-accent"></div>
+            <div className="flex items-center justify-between">
+                <div className="display flex items-center font-bold gap-2 md:gap-3 shadow-xl rounded-full px-2 md:px-3 py-1 md:py-2 border-2 border-border text-[14px] md:text-base/6">
+                    <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-green-500"></div>
                     <span>Available for hire</span>
                 </div>
                 <div className="space-x-4 md:space-x-20 text-sm md:text-base">
