@@ -4,10 +4,10 @@ import { RiFileDownloadLine } from "react-icons/ri";
 
 const Hero = () => {
     return (
-        <section className="min-h-screen pt-16 xl:pt-10 px-5 lg:px-12 xl:px-32 2xl:px-96 flex flex-col justify-center">
-            <div className="flex flex-col lg:flex-row justify-between items-center mb-10">
+        <section className="min-h-[100svh] pt-4 sm:pt-20 xl:pt-10 px-5 lg:px-12 xl:px-32 2xl:px-96 flex flex-col justify-center">
+            <div className="flex flex-col lg:flex-row justify-between items-center mb-10 lg:gap-10">
                 {/* left content */}
-                <div className="w-full lg:max-w-[clamp(10rem,55vw,40rem)] h-auto lg:h-[clamp(10rem,30vw,40rem)] flex flex-col justify-between">
+                <div className="w-full lg:max-w-[clamp(10rem,55vw,40rem)] h-auto lg:h-[30rem] xl:h-[clamp(30rem,32vw,38rem)] flex flex-col justify-between">
                     {/* info */}
                     <div>
                         {/* greeting */}
@@ -36,7 +36,7 @@ const Hero = () => {
 
                 {/* right content */}
                 {/* profile image */}
-                <div className="hidden lg:block w-[clamp(10rem,30vw,40rem)] h-[clamp(10rem,30vw,40rem)] overflow-hidden rounded-md bg-gray-100">
+                <div className="hidden lg:block lg:w-[48rem] lg:h-[30rem] xl:w-[clamp(30rem,30vw,38rem)] xl:h-[clamp(30rem,30vw,38rem)] overflow-hidden rounded-md bg-gray-100">
                     <img
                         src={profileImage}
                         alt="Profile"
