@@ -1,7 +1,19 @@
 import { useState } from "react";
-import dashboardFacenuxImg from "../assets/images/projects/facenux/dashboard.png";
 
-const Card = () => {
+type CardProps = {
+    title: string;
+    description: string;
+    image: string;
+    technologies: string[];
+    role: string;
+    features: string[];
+    iBuilt: string[];
+    projectType: string;
+    liveDemoUrl: string;
+    githubUrl: string;
+}
+
+const Card = ({ title, description, image, technologies, role, features, iBuilt, projectType, liveDemoUrl, githubUrl }: CardProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -12,7 +24,7 @@ const Card = () => {
                 className="w-full h-auto bg-card rounded-2xl shadow-xl cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out"
             >
                 <img
-                    src={dashboardFacenuxImg}
+                    src={image}
                     alt="Project"
                     className="w-full h-44 object-cover object-top rounded-t-2xl"
                 />
@@ -20,44 +32,27 @@ const Card = () => {
                 <div className="p-4 flex flex-col gap-4">
 
                     <h2 className="text-xl font-bold">
-                        Facenux
+                        {title}
                     </h2>
 
                     <p className="text-gray-500 line-clamp-3">
-                        A web platform for developers and businesses to manage
-                        and integrate face recognition APIs. I was responsible
-                        for developing the frontend and backend of the API
-                        portal, building the user interface, API management
-                        functionality, and backend services for handling
-                        application data and requests.
-
-                        The portal connects to a separate face recognition API
-                        developed by another team, supporting capabilities such
-                        as age and gender prediction, emotion recognition,
-                        facial landmarks, and liveness verification.
+                        {description}
                     </p>
 
-                    <div className="flex flex-wrap justify-between items-center">
-
-                        <div>
-                            <span className="bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                                React.js
+                    <div>
+                        {technologies.map((tech, index) => (
+                            <span
+                                key={index}
+                                className="bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                            >
+                                {tech}
                             </span>
-
-                            <span className="bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                                Express.js
-                            </span>
-
-                            <span className="bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                                PostgreSQL
-                            </span>
-                        </div>
-
-                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                            Fullstack
-                        </span>
-
+                        ))}
                     </div>
+
+                    <span className="self-start bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                        {role}
+                    </span>
                 </div>
             </div>
 
@@ -75,7 +70,7 @@ const Card = () => {
                         {/* Modal Header */}
                         <div className="flex items-center justify-between p-6 border-b">
                             <h2 className="text-2xl font-bold">
-                                Facenux
+                                {title}
                             </h2>
 
                             <button
@@ -90,8 +85,8 @@ const Card = () => {
                         <div className="p-6 flex flex-col gap-6">
 
                             <img
-                                src={dashboardFacenuxImg}
-                                alt="Facenux Dashboard"
+                                src={image}
+                                alt={` ${title} Screenshot`}
                                 className="w-full rounded-xl"
                             />
 
@@ -101,9 +96,7 @@ const Card = () => {
                                 </h3>
 
                                 <p className="text-gray-600 leading-relaxed">
-                                    A web platform for developers and businesses
-                                    to manage and integrate face recognition
-                                    APIs.
+                                    {description}
                                 </p>
                             </div>
 
@@ -113,8 +106,36 @@ const Card = () => {
                                 </h3>
 
                                 <p className="text-gray-600">
-                                    Fullstack Developer
+                                    {role}
                                 </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-bold mb-2">
+                                    Key Features
+                                </h3>
+
+                                <div className="flex flex-col ml-5">
+                                    {features.map((feature, index) => (
+                                        <li key={index} className="text-gray-600 mb-1">
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-bold mb-2">
+                                    What I Built
+                                </h3>
+
+                                <div className="flex flex-col ml-5">
+                                    {iBuilt.map((item, index) => (
+                                        <li key={index} className="text-gray-600 mb-1">
+                                            {item}
+                                        </li>
+                                    ))}
+                                </div>
                             </div>
 
                             <div>
@@ -122,17 +143,29 @@ const Card = () => {
                                     Technologies
                                 </h3>
 
-                                <div className="flex flex-wrap gap-2">
-                                    <span>React.js</span>
-                                    <span>Express.js</span>
-                                    <span>PostgreSQL</span>
+                                <div className="flex flex-wrap gap-2 text-gray-600">
+                                    {technologies.map((tech, index) => (
+                                        <span key={index} className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                            {tech}
+                                        </span>
+                                    ))}
                                 </div>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-bold mb-2">
+                                    Project Type
+                                </h3>
+
+                                <p className="text-gray-600">
+                                    {projectType}
+                                </p>
                             </div>
 
                             {/* Actions */}
                             <div className="flex gap-3">
                                 <a
-                                    href="#"
+                                    href={liveDemoUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="px-4 py-2 bg-black text-white rounded-lg"
@@ -141,7 +174,7 @@ const Card = () => {
                                 </a>
 
                                 <a
-                                    href="#"
+                                    href={githubUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="px-4 py-2 bg-gray-200 rounded-lg"
