@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bg: #ffffff;
+    --ink: #0b0c0d;
+    --line: #e5e7eb;
+    --chip: #e5e7eb;
+    --acc: #22c55e;
+    --mute: color-mix(in srgb, var(--ink) 60%, var(--bg));
+}
+
+body {
+    @apply bg-bg text-ink leading-[1.65];
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

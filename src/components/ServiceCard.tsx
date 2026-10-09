@@ -12,8 +12,8 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
     return (
         <div className="border border-gray-400 w-full h-auto flex flex-col p-4 gap-4">
-            <div className="self-start bg-gray-200 p-3 rounded-lg">
-                <Icon size={32} />
+            <div className="self-start bg-gray-200 p-2 rounded-lg">
+                <Icon size={29} />
             </div>
             <h2 className="text-xl font-bold">{title}</h2>
             <p className="text-lg">{description}</p>
