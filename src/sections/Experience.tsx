@@ -1,46 +1,24 @@
-import TimelineItem from "../components/TimelineItem";
+import CardTimeline from "../components/CardTimeline";
 import { jobs } from "../data/experience";
-import { useTimelineProgress } from "../hooks/userTimelineProgress";
+
 
 export default function Experience() {
-  const { tlRef, nodeRefs, active, done } = useTimelineProgress(jobs.length);
 
   return (
-    <section
-      aria-labelledby="exp"
-      className="mx-auto max-w-[720px] px-6 pb-[max(120px,35vh)] pt-[72px]"
-    >
-      <h2
-        id="exp"
-        className="mb-[72px] font-display text-[clamp(2.6rem,9vw,4.75rem)] font-bold leading-none tracking-[-0.035em]"
-      >
-        Experience
-      </h2>
-
-      <div ref={tlRef} className="relative">
-        {/* rail */}
-        <div aria-hidden="true" className="absolute inset-y-0 left-[10px] w-0.5 bg-line">
-          <div className="absolute inset-0 origin-top bg-acc [transform:scaleY(var(--p,0))]" />
-        </div>
-
-        {jobs.map((job, i) => (
-          <TimelineItem
-            key={job.role + job.period}
-            job={job}
-            on={active[i] ?? false}
-            nodeRef={(el) => {
-              nodeRefs.current[i] = el;
-            }}
+    <section className="px-5 pt-12 xl:px-32 2xl:px-96">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">/Experience</h1>
+      <div className="flex flex-col gap-4 mb-4">
+        {jobs.map((job, index) => (
+          <CardTimeline
+            key={index}
+            role={job.role}
+            company={job.company}
+            address={job.address}
+            period={job.period}
+            description={job.description}
+            KeyContributions={job.KeyContributions}
           />
         ))}
-
-        {/* panah akhir */}
-        <span
-          aria-hidden="true"
-          className={`absolute -bottom-3.5 left-[3px] size-0 border-8 border-transparent border-b-0 border-t-[11px] transition-[border-top-color] duration-[400ms] ${
-            done ? "border-t-acc" : "border-t-line"
-          }`}
-        />
       </div>
     </section>
   );
