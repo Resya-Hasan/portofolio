@@ -5,6 +5,7 @@ import Projects from './sections/Projects'
 import Service from './sections/Service'
 import Experience from './sections/Experience'
 import Skills from './sections/Skills'
+import AboutMe from './sections/AboutMe'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Projects />
       <Experience />
       <Skills />
+      <AboutMe />
     </div>
   )
 }
