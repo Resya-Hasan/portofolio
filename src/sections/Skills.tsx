@@ -1,11 +1,14 @@
 import {
     SiReact, SiTailwindcss, SiTypescript, SiNextdotjs,
-    SiExpress, SiPostgresql, SiGit, SiFigma
+    SiExpress, SiPostgresql, SiGit, SiPostman, SiDocker,
 } from "react-icons/si";
+import { LuLayoutTemplate, LuServer, LuWrench } from "react-icons/lu";
 
 const groups = [
     {
         title: "Frontend",
+        icon: LuLayoutTemplate,
+        desc: "Building responsive, accessible interfaces with a component-based approach.",
         items: [
             { name: "React", icon: SiReact },
             { name: "Next.js", icon: SiNextdotjs },
@@ -15,6 +18,8 @@ const groups = [
     },
     {
         title: "Backend",
+        icon: LuServer,
+        desc: "Developing RESTful APIs, authentication, and database-driven features.",
         items: [
             { name: "Express.js", icon: SiExpress },
             { name: "PostgreSQL", icon: SiPostgresql },
@@ -22,45 +27,43 @@ const groups = [
     },
     {
         title: "Tools",
+        icon: LuWrench,
+        desc: "Version control, design handoff, and everyday development workflow.",
         items: [
             { name: "Git", icon: SiGit },
-            { name: "Figma", icon: SiFigma },
+            { name: "Postman", icon: SiPostman},
+            { name: "Docker", icon: SiDocker },
         ],
     },
 ];
 
 export default function Skills() {
     return (
-        <section className="max-w-5xl mx-auto px-6 py-16">
-            <div className="grid gap-10 md:grid-cols-[1fr_2fr]">
-                <div>
-                    <h2 className="text-3xl font-bold mb-3">/Skills</h2>
-                    <p className="text-gray-600 mb-4">
-                        Tools and technologies I use to build web applications, from interface to API.
-                    </p>
-                    <p className="text-sm text-gray-500">
-                        Currently learning: <span className="font-medium text-gray-800">Next.js, Docker</span>
-                    </p>
-                </div>
+        <section className="px-5 pt-12 xl:px-32 2xl:px-96 mb-6">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">/Skills</h1>
 
-                <div className="space-y-6">
-                    {groups.map((g) => (
-                        <div key={g.title}>
-                            <h3 className="text-sm font-semibold mb-3">{g.title}</h3>
-                            <ul className="flex flex-wrap gap-3">
-                                {g.items.map(({ name, icon: Icon }) => (
-                                    <li
-                                        key={name}
-                                        className="flex items-center gap-2 rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-800"
-                                    >
-                                        <Icon className="text-base" />
-                                        {name}
-                                    </li>
-                                ))}
-                            </ul>
+            <div className="grid gap-5 md:grid-cols-3">
+                {groups.map(({ title, icon: GroupIcon, desc, items }) => (
+                    <div key={title} className="rounded-lg border border-gray-200 p-5">
+                        <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-gray-100">
+                            <GroupIcon className="text-lg" />
                         </div>
-                    ))}
-                </div>
+                        <h3 className="mb-2 font-semibold">{title}</h3>
+                        <p className="mb-5 text-sm leading-relaxed text-gray-600">{desc}</p>
+
+                        <ul className="flex flex-wrap gap-2">
+                            {items.map(({ name, icon: Icon }) => (
+                                <li
+                                    key={name}
+                                    className="flex items-center gap-2 rounded-md bg-gray-100 px-3 py-2 text-sm font-medium text-gray-800"
+                                >
+                                    <Icon />
+                                    {name}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
         </section>
     );
