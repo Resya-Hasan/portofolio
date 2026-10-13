@@ -1,22 +1,4 @@
-import { LuCode, LuLayoutTemplate, LuBlocks } from "react-icons/lu";
-
-const highlights = [
-    {
-        icon: LuCode,
-        title: "Full-stack JavaScript",
-        desc: "Background building web applications end to end.",
-    },
-    {
-        icon: LuLayoutTemplate,
-        title: "Frontend focus",
-        desc: "Turning ideas into practical, user-friendly interfaces.",
-    },
-    {
-        icon: LuBlocks,
-        title: "Maintainable code",
-        desc: "Improving UI implementation and application architecture.",
-    },
-];
+import { highlights } from "../data/highlights";
 
 const AboutMe = () => {
     return (
