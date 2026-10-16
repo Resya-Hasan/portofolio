@@ -1,6 +1,19 @@
 import profileImage from "../assets/images/profile.png"
 import { FaLinkedinIn, FaGithub, FaXTwitter } from "react-icons/fa6"
 import { RiFileDownloadLine } from "react-icons/ri";
+import { motion, MotionConfig, type Variants } from "motion/react"
+
+const container: Variants = {
+    hidden: {},
+    show: {
+        transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+    },
+}
+
+const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+}
 
 const Hero = () => {
     return (
@@ -9,29 +22,31 @@ const Hero = () => {
                 {/* left content */}
                 <div className="w-full lg:max-w-[clamp(10rem,55vw,40rem)] h-auto lg:h-[30rem] xl:h-[clamp(30rem,32vw,38rem)] flex flex-col justify-between">
                     {/* info */}
-                    <div>
+                    <motion.div variants={container} initial={"hidden"} animate={"show"}>
                         {/* greeting */}
-                        <p className="text-2xl font-bold mb-4">Welcome to My Portfolio</p>
+                        <motion.p variants={fadeUp} className="text-2xl font-bold mb-4">
+                            Welcome to My Portfolio
+                        </motion.p>
 
                         {/* name & profession */}
-                        <h1 className="text-[clamp(2rem,3.2vw,8rem)] font-[1000] mb-1 xl:mb-4"><span>Hi, I'm </span>Resya Hasan M</h1>
-                        <p className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-extrabold mb-4"><span>A Profesional </span><span>Frontend Developer</span></p>
+                        <motion.h1 variants={fadeUp} className="text-[clamp(2rem,3.2vw,8rem)] font-[1000] mb-1 xl:mb-4"><span>Hi, I'm </span>Resya Hasan M</motion.h1>
+                        <motion.p variants={fadeUp} className="text-[clamp(1.5rem,2.5vw,2.5rem)] font-extrabold mb-4"><span>A Profesional </span><span>Frontend Developer</span></motion.p>
 
                         {/* image - mobile/tablet */}
-                        <div className="lg:hidden w-full h-[clamp(10rem,70vw,40rem)] overflow-hidden rounded-md bg-gray-100 mx-auto my-8">
+                        <motion.div variants={fadeUp} className="lg:hidden w-full h-[clamp(10rem,70vw,40rem)] overflow-hidden rounded-md bg-gray-100 mx-auto my-8">
                             <img
                                 src={profileImage}
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />
-                        </div>
+                        </motion.div>
 
                         {/* description */}
-                        <p className="text-[clamp(1rem,1.2vw,1.5rem)] items-end leading-[1.8]">I’m a Frontend Developer passionate about creating modern, responsive, and engaging web
+                        <motion.p variants={fadeUp} className="text-[clamp(1rem,1.2vw,1.5rem)] items-end leading-[1.8]">I’m a Frontend Developer passionate about creating modern, responsive, and engaging web
                             experiences. I turn ideas and designs into clean, intuitive interfaces using modern web
                             technologies, with a focus on usability, performance, and maintainable code.
-                        </p>
-                    </div>
+                        </motion.p>
+                    </motion.div>
                 </div>
 
                 {/* right content */}
@@ -50,10 +65,10 @@ const Hero = () => {
                 {/* social media links */}
                 <div className="flex flex-col gap-6">
                     <span className="text-[clamp(1rem,2vw,1.25rem)] font-semibold">Find me on</span>
-                    <div className="flex gap-6">
-                        <a href="#" target="_blank" className="bg-gray-200 w-[clamp(1rem,6vw,4rem)] h-[clamp(1rem,6vw,4rem)] flex items-center justify-center"><FaLinkedinIn className="text-[clamp(1rem,2.8vw,1.875rem)]" /></a>
-                        <a href="#" target="_blank" className="bg-gray-200 w-[clamp(1rem,6vw,4rem)] h-[clamp(1rem,6vw,4rem)] flex items-center justify-center"><FaGithub className="text-[clamp(1rem,2.8vw,1.875rem)]" /></a>
-                        <a href="#" target="_blank" className="bg-gray-200 w-[clamp(1rem,6vw,4rem)] h-[clamp(1rem,6vw,4rem)] flex items-center justify-center"><FaXTwitter className="text-[clamp(1rem,2.8vw,1.875rem)]" /></a>
+                    <div className="flex gap-3.5 md:gap-6">
+                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaLinkedinIn className="text-xl md:text-2xl" /></a>
+                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaGithub className="text-xl md:text-2xl" /></a>
+                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaXTwitter className="text-xl md:text-2xl" /></a>
                     </div>
                 </div>
 
@@ -63,7 +78,7 @@ const Hero = () => {
                     <a
                         href="#"
                         target="_blank"
-                        className="h-[clamp(1rem,6vw,4rem)] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]">
+                        className="h-[2.2rem] md:h-[3.5rem] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]">
                         Download CV <span className="ml-2"><RiFileDownloadLine className="text-[clamp(1rem,2vw,1.875rem)]" /></span>
                     </a>
                 </div>

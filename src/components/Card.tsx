@@ -50,9 +50,9 @@ const Card = ({ title, description, image, technologies, role, features, iBuilt,
                         ))}
                     </div>
 
-                    <span className="self-start bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                    {/* <span className="self-start bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                         {role}
-                    </span>
+                    </span> */}
                 </div>
             </div>
 
@@ -63,7 +63,7 @@ const Card = ({ title, description, image, technologies, role, features, iBuilt,
                     onClick={() => setIsOpen(false)}
                 >
                     <div
-                        className="w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl"
+                        className="w-full max-w-3xl max-h-[75vh] md:max-h-[90vh] overflow-y-auto bg-white rounded-2xl"
                         onClick={(e) => e.stopPropagation()}
                     >
 
