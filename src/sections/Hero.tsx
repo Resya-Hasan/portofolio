@@ -50,10 +50,10 @@ const Hero = () => {
                 {/* social media links */}
                 <div className="flex flex-col gap-6">
                     <span className="text-[clamp(1rem,2vw,1.25rem)] font-semibold">Find me on</span>
-                    <div className="flex gap-6">
-                        <a href="#" target="_blank" className="bg-gray-200 w-[clamp(1rem,6vw,4rem)] h-[clamp(1rem,6vw,4rem)] flex items-center justify-center"><FaLinkedinIn className="text-[clamp(1rem,2.8vw,1.875rem)]" /></a>
-                        <a href="#" target="_blank" className="bg-gray-200 w-[clamp(1rem,6vw,4rem)] h-[clamp(1rem,6vw,4rem)] flex items-center justify-center"><FaGithub className="text-[clamp(1rem,2.8vw,1.875rem)]" /></a>
-                        <a href="#" target="_blank" className="bg-gray-200 w-[clamp(1rem,6vw,4rem)] h-[clamp(1rem,6vw,4rem)] flex items-center justify-center"><FaXTwitter className="text-[clamp(1rem,2.8vw,1.875rem)]" /></a>
+                    <div className="flex gap-3.5 md:gap-6">
+                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaLinkedinIn className="text-xl md:text-2xl" /></a>
+                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaGithub className="text-xl md:text-2xl" /></a>
+                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaXTwitter className="text-xl md:text-2xl" /></a>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@ const Hero = () => {
                     <a
                         href="#"
                         target="_blank"
-                        className="h-[clamp(1rem,6vw,4rem)] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]">
+                        className="h-[2.2rem] md:h-[3.5rem] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]">
                         Download CV <span className="ml-2"><RiFileDownloadLine className="text-[clamp(1rem,2vw,1.875rem)]" /></span>
                     </a>
                 </div>

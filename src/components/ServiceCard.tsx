@@ -11,12 +11,12 @@ const ServiceCard = ({
     description,
 }: ServiceCardProps) => {
     return (
-        <div className="border border-gray-400 w-full h-auto flex flex-col p-4 gap-4">
+        <div className="border border-line rounded-md w-full h-auto flex flex-col p-4 gap-4">
             <div className="self-start bg-gray-200 p-2 rounded-lg">
-                <Icon size={29} />
+                <Icon size={29} strokeWidth={1.4}/>
             </div>
-            <h2 className="text-xl font-bold">{title}</h2>
-            <p className="text-lg">{description}</p>
+            <h2 className="text-md lg:text-xl font-bold">{title}</h2>
+            <p className="text-base">{description}</p>
         </div>
     )
 }
