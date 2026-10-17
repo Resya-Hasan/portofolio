@@ -1,19 +1,8 @@
 import profileImage from "../assets/images/profile.png"
 import { FaLinkedinIn, FaGithub, FaXTwitter } from "react-icons/fa6"
 import { RiFileDownloadLine } from "react-icons/ri";
-import { motion, MotionConfig, type Variants } from "motion/react"
-
-const container: Variants = {
-    hidden: {},
-    show: {
-        transition: { staggerChildren: 0.12, delayChildren: 0.1 },
-    },
-}
-
-const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 24 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-}
+import { motion, } from "motion/react"
+import { staggerContainer, fadeUp, slideInRight, fadeRight, fadeLeft } from "../animations"
 
 const Hero = () => {
     return (
@@ -22,7 +11,7 @@ const Hero = () => {
                 {/* left content */}
                 <div className="w-full lg:max-w-[clamp(10rem,55vw,40rem)] h-auto lg:h-[30rem] xl:h-[clamp(30rem,32vw,38rem)] flex flex-col justify-between">
                     {/* info */}
-                    <motion.div variants={container} initial={"hidden"} animate={"show"}>
+                    <motion.div variants={staggerContainer} initial={"hidden"} animate={"show"}>
                         {/* greeting */}
                         <motion.p variants={fadeUp} className="text-2xl font-bold mb-4">
                             Welcome to My Portfolio
@@ -51,36 +40,86 @@ const Hero = () => {
 
                 {/* right content */}
                 {/* profile image */}
-                <div className="hidden lg:block lg:w-[48rem] lg:h-[30rem] xl:w-[clamp(30rem,30vw,38rem)] xl:h-[clamp(30rem,30vw,38rem)] overflow-hidden rounded-md bg-gray-100">
+                <motion.div
+                    className="hidden lg:block lg:w-[48rem] lg:h-[30rem] xl:w-[clamp(30rem,30vw,38rem)] xl:h-[clamp(30rem,30vw,38rem)] overflow-hidden rounded-md bg-gray-100"
+                    variants={slideInRight}
+                    initial={"hidden"}
+                    animate={"show"}
+                >
                     <img
                         src={profileImage}
                         alt="Profile"
                         className="w-full h-full object-cover"
                     />
-                </div>
+                </motion.div>
 
             </div>
             {/* action */}
             <div className="flex justify-between lg:mt-4 items-end">
                 {/* social media links */}
                 <div className="flex flex-col gap-6">
-                    <span className="text-[clamp(1rem,2vw,1.25rem)] font-semibold">Find me on</span>
-                    <div className="flex gap-3.5 md:gap-6">
-                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaLinkedinIn className="text-xl md:text-2xl" /></a>
-                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaGithub className="text-xl md:text-2xl" /></a>
-                        <a href="#" target="_blank" className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"><FaXTwitter className="text-xl md:text-2xl" /></a>
-                    </div>
+                    <motion.span
+                        className="text-[clamp(1rem,2vw,1.25rem)] font-semibold"
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="show"
+                    >
+                        Find me on
+                    </motion.span>
+                    <motion.div
+                        className="flex gap-3.5 md:gap-6"
+                        variants={staggerContainer}
+                        initial={"hidden"}
+                        animate={"show"}
+                    >
+                        <motion.a
+                            href="#"
+                            target="_blank"
+                            className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
+                            variants={fadeRight}
+                        >
+                            <FaLinkedinIn className="text-xl md:text-2xl" />
+                        </motion.a>
+                        <motion.a
+                            href="#"
+                            target="_blank"
+                            className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
+                            variants={fadeRight}
+                        >
+                            <FaGithub className="text-xl md:text-2xl" />
+                        </motion.a>
+                        <motion.a
+                            href="#"
+                            target="_blank"
+                            className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
+                            variants={fadeRight}
+                        >
+                            <FaXTwitter className="text-xl md:text-2xl" />
+                        </motion.a>
+                    </motion.div>
                 </div>
 
                 {/* resume download */}
                 <div className="flex flex-col gap-6">
-                    <span className="text-[clamp(1rem,2vw,1.25rem)] font-semibold">Download my CV</span>
-                    <a
+                    <motion.span
+                        className="text-[clamp(1rem,2vw,1.25rem)] font-semibold"
+                        variants={fadeUp}
+                        initial={"hidden"}
+                        animate={"show"}
+                    >
+                        Download my CV
+                    </motion.span>
+                    <motion.a
                         href="#"
                         target="_blank"
-                        className="h-[2.2rem] md:h-[3.5rem] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]">
-                        Download CV <span className="ml-2"><RiFileDownloadLine className="text-[clamp(1rem,2vw,1.875rem)]" /></span>
-                    </a>
+                        className="h-[2.2rem] md:h-[3.5rem] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]"
+                        variants={fadeLeft}
+                        initial={"hidden"}
+                        animate={"show"}
+                    >
+                        Download CV
+                        <span className="ml-2"><RiFileDownloadLine className="text-[clamp(1rem,2vw,1.875rem)]" /></span>
+                    </motion.a>
                 </div>
             </div>
         </section>
