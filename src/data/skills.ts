@@ -1,6 +1,6 @@
 import {
     SiReact, SiTailwindcss, SiTypescript, SiNextdotjs,
-    SiExpress, SiPostgresql, SiGit, SiPostman, SiDocker,
+    SiExpress, SiPostgresql, SiGit, SiPostman, SiDocker, SiMongodb
 } from "react-icons/si";
 import { LuLayoutTemplate, LuServer, LuWrench } from "react-icons/lu";
 import type {IconType} from "react-icons"
@@ -36,6 +36,7 @@ export const skills: SkillCategory[] = [
         items: [
             { name: "Express.js", icon: SiExpress },
             { name: "PostgreSQL", icon: SiPostgresql },
+            { name: "MongoDb", icon: SiMongodb}
         ],
     },
     {

@@ -26,9 +26,9 @@ export default function Experience() {
         {jobs.map((job, index) => (
           <motion.div
             variants={fadeUp}
+            key={index}
           >
             <CardTimeline
-              key={index}
               role={job.role}
               company={job.company}
               address={job.address}

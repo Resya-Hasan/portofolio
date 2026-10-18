@@ -7,8 +7,15 @@ import {
   LuWrench,
   LuCodeXml,
 } from "react-icons/lu";
+import type { IconType } from "react-icons"
 
-export const services = [
+export interface Service {
+    icon: IconType;
+    title: string;
+    description: string;
+}
+
+export const services: Service[] = [
   {
     icon: LuPanelsTopLeft,
     title: "Frontend Development",
