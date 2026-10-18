@@ -10,7 +10,8 @@ const Service = () => {
                 className="mb-6 text-2xl md:text-3xl lg:text-4xl font-bold"
                 variants={fadeRight}
                 initial={"hidden"}
-                animate={"show"}
+                whileInView={"show"}
+                viewport={{ once: true }}
             >
                 /My Service
             </motion.h1>
@@ -19,8 +20,9 @@ const Service = () => {
             <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
                 variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
+                initial={"hidden"}
+                whileInView={"show"}
+                viewport={{ once: true }}
             >
                 {services.map((item, index) => (
                     <motion.div key={index} variants={scaleIn}>
