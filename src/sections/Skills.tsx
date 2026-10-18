@@ -1,63 +1,41 @@
 import { skills } from "../data/skills";
-//         title: "Frontend",
-//         icon: LuLayoutTemplate,
-//         desc: "Building responsive, accessible interfaces with a component-based approach.",
-//         items: [
-//             { name: "React", icon: SiReact },
-//             { name: "Next.js", icon: SiNextdotjs },
-//             { name: "TypeScript", icon: SiTypescript },
-//             { name: "Tailwind CSS", icon: SiTailwindcss },
-//         ],
-//     },
-//     {
-//         title: "Backend",
-//         icon: LuServer,
-//         desc: "Developing RESTful APIs, authentication, and database-driven features.",
-//         items: [
-//             { name: "Express.js", icon: SiExpress },
-//             { name: "PostgreSQL", icon: SiPostgresql },
-//         ],
-//     },
-//     {
-//         title: "Tools",
-//         icon: LuWrench,
-//         desc: "Version control, design handoff, and everyday development workflow.",
-//         items: [
-//             { name: "Git", icon: SiGit },
-//             { name: "Postman", icon: SiPostman},
-//             { name: "Docker", icon: SiDocker },
-//         ],
-//     },
-// ];
+import { motion } from "motion/react"
+import { fadeRight, scaleIn, staggerContainer } from "../animations";
+import { CardSkills } from "../components/CardSkills";
 
 export default function Skills() {
+    const MotionCardSkills = motion.create(CardSkills)
+
     return (
         <section className="px-5 pt-12 xl:px-32 2xl:px-96 mb-6">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">/Skills</h1>
+            <motion.h1
+                className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6"
+                variants={fadeRight}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true }}
+            >
+                /Skills
+            </motion.h1>
 
-            <div className="grid gap-5 md:grid-cols-3">
+            <motion.div
+                className="grid gap-5 md:grid-cols-3"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true }}
+            >
                 {skills.map(({ title, icon: GroupIcon, desc, items }) => (
-                    <div key={title} className="rounded-lg border border-gray-200 p-5">
-                        <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-gray-100">
-                            <GroupIcon className="text-lg" />
-                        </div>
-                        <h3 className="mb-2 font-semibold">{title}</h3>
-                        <p className="mb-5 text-sm leading-relaxed text-gray-600">{desc}</p>
-
-                        <ul className="flex flex-wrap gap-2">
-                            {items.map(({ name, icon: Icon }) => (
-                                <li
-                                    key={name}
-                                    className="flex items-center gap-2 rounded-md bg-gray-100 px-3 py-2 text-sm font-medium text-gray-800"
-                                >
-                                    <Icon />
-                                    {name}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <MotionCardSkills
+                        key={title}
+                        variants={scaleIn}
+                        title={title}
+                        icon={GroupIcon}
+                        desc={desc}
+                        items={items}
+                    />
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 }
