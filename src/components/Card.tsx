@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { overlayFade, modalPanel } from "../animations";
 
@@ -17,6 +17,11 @@ type CardProps = {
 
 const Card = ({ title, description, image, technologies, role, features, iBuilt, projectType, liveDemoUrl, githubUrl }: CardProps) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = isOpen ? "hidden" : ""
+        return () => { document.body.style.overflow = "" }
+    }, [isOpen])
 
     return (
         <>
