@@ -4,6 +4,8 @@ import { motion } from "motion/react"
 import { fadeRight, staggerContainer, scaleIn } from "../animations"
 
 const Service = () => {
+    const MotionServiceCard = motion.create(ServiceCard)
+
     return (
         <section className="pt-4 sm:pt-20 xl:pt-10 px-5 lg:px-12 xl:px-32 2xl:px-96">
             <motion.h1
@@ -25,13 +27,13 @@ const Service = () => {
                 viewport={{ once: true }}
             >
                 {services.map((item, index) => (
-                    <motion.div key={index} variants={scaleIn}>
-                        <ServiceCard
-                            icon={item.icon}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    </motion.div>
+                    <MotionServiceCard
+                        key={index}
+                        variants={scaleIn}
+                        icon={item.icon}
+                        title={item.title}
+                        description={item.description}
+                    />
                 ))}
             </motion.div>
         </section>
