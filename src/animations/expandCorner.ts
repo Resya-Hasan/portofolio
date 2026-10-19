@@ -1,0 +1,6 @@
+import type { Variants } from "motion/react"
+
+export const expandCorner: Variants = {
+    hidden: { opacity: 0, scale: 0 },
+    show: { opacity: 1, scale: 1, transition: { duration: 0.9, ease: "easeOut" } },
+}

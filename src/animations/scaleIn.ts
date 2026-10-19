@@ -5,6 +5,6 @@ export const scaleIn: Variants = {
     show: {
         opacity: 1,
         scale: 1,
-        transition: { duration: 1.2, ease: "easeOut" },
+        transition: { duration: 0.9, ease: "easeOut" },
     },
 }
