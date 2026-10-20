@@ -39,7 +39,7 @@ const AboutMe = () => {
                 >
                     <motion.span
                         variants={growLine}
-                        className="absolute left-0 top-0 h-px w-full origin-left bg-gray-200"
+                        className="absolute left-0 top-0 h-px w-full origin-left bg-chip"
                     />
 
                     {highlights.map(({ icon: Icon, title, desc }) => (
