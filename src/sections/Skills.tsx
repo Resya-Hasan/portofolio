@@ -7,7 +7,7 @@ export default function Skills() {
     const MotionCardSkills = motion.create(CardSkills)
 
     return (
-        <section className="px-5 pt-12 xl:px-32 2xl:px-96 mb-6">
+        <section id="skills" className="px-5 pt-12 xl:px-32 2xl:px-96 mb-6">
             <motion.h1
                 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6"
                 variants={fadeRight}

@@ -5,6 +5,7 @@ import { staggerContainer, fadeRight, fadeDown, scaleInStagger, growLine } from 
 const AboutMe = () => {
     return (
         <motion.section
+            id="aboutMe"
             className="px-5 pt-12 xl:px-32 2xl:px-96 mb-6"
             variants={staggerContainer}
             initial="hidden"

@@ -7,7 +7,7 @@ const Service = () => {
     const MotionServiceCard = motion.create(ServiceCard)
 
     return (
-        <section className="pt-4 sm:pt-20 xl:pt-10 px-5 lg:px-12 xl:px-32 2xl:px-96">
+        <section id="services" className="pt-4 sm:pt-20 xl:pt-10 px-5 lg:px-12 xl:px-32 2xl:px-96">
             <motion.h1
                 className="mb-6 text-2xl md:text-3xl lg:text-4xl font-bold"
                 variants={fadeRight}
