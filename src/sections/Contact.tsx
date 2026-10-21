@@ -7,6 +7,7 @@ import { staggerContainer, fadeRight, fadeDown } from "../animations";
 const Contact = () => {
     return (
         <motion.section
+            id="contact"
             className="px-5 pt-12 xl:px-32 2xl:px-96 mb-6"
             variants={staggerContainer}
             initial="hidden"

@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 export default function Experience() {
 
   return (
-    <section className="px-5 pt-12 xl:px-32 2xl:px-96">
+    <section id="experience" className="px-5 pt-12 xl:px-32 2xl:px-96">
       <motion.h1
         className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6"
         variants={fadeRight}

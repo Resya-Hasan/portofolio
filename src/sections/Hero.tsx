@@ -73,7 +73,7 @@ const Hero = () => {
                         animate={"show"}
                     >
                         <motion.a
-                            href="#"
+                            href="https://www.linkedin.com/in/resya-hasan-5080b8368/?isSelfProfile=true"
                             target="_blank"
                             className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
                             variants={fadeRight}
@@ -81,7 +81,7 @@ const Hero = () => {
                             <FaLinkedinIn className="text-xl md:text-2xl" />
                         </motion.a>
                         <motion.a
-                            href="#"
+                            href="https://github.com/Resya-Hasan"
                             target="_blank"
                             className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
                             variants={fadeRight}
@@ -89,7 +89,7 @@ const Hero = () => {
                             <FaGithub className="text-xl md:text-2xl" />
                         </motion.a>
                         <motion.a
-                            href="#"
+                            href="https://x.com/Resyhsn"
                             target="_blank"
                             className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
                             variants={fadeRight}
