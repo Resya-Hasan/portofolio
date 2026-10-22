@@ -13,8 +13,8 @@ export const CardSkills = ({title, icon: GroupIcon, desc, items, className, styl
         ref={ref}
         style={style}
         className={`rounded-lg border border-gray-200 p-5 ${className ?? ""}`}>
-            <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-md bg-gray-100">
-                <GroupIcon className="text-lg" />
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-acc text-bg">
+                <GroupIcon size={26} strokeWidth={1.5}/>
             </div>
             <h3 className="mb-2 font-semibold">{title}</h3>
             <p className="mb-5 text-sm leading-relaxed text-gray-600">{desc}</p>

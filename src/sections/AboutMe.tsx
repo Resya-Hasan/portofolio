@@ -45,8 +45,8 @@ const AboutMe = () => {
 
                     {highlights.map(({ icon: Icon, title, desc }) => (
                         <motion.div key={title} variants={fadeRight} className="flex items-start gap-3">
-                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-100">
-                                <Icon className="text-lg" />
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-acc text-bg">
+                                <Icon size={20} />
                             </div>
                             <div>
                                 <h3 className="text-sm font-semibold">{title}</h3>

@@ -75,24 +75,30 @@ const Hero = () => {
                         <motion.a
                             href="https://www.linkedin.com/in/resya-hasan-5080b8368/?isSelfProfile=true"
                             target="_blank"
-                            className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
+                            className="bg-gray-200 rounded-md w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-acc hover:text-chip hover:shadow-xl"
                             variants={fadeRight}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <FaLinkedinIn className="text-xl md:text-2xl" />
                         </motion.a>
                         <motion.a
                             href="https://github.com/Resya-Hasan"
                             target="_blank"
-                            className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
+                            className="bg-gray-200 rounded-md w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-acc hover:text-chip hover:shadow-xl"
                             variants={fadeRight}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <FaGithub className="text-xl md:text-2xl" />
                         </motion.a>
                         <motion.a
                             href="https://x.com/Resyhsn"
                             target="_blank"
-                            className="bg-gray-200 w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center"
+                            className="bg-gray-200 rounded-md w-[2.2rem] md:w-[3.5rem] h-[2.2rem] md:h-[3.5rem] flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-acc hover:text-chip hover:shadow-xl"
                             variants={fadeRight}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <FaXTwitter className="text-xl md:text-2xl" />
                         </motion.a>
@@ -112,10 +118,12 @@ const Hero = () => {
                     <motion.a
                         href="#"
                         target="_blank"
-                        className="h-[2.2rem] md:h-[3.5rem] px-[clamp(1rem,6vw,1.5rem)] flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500]"
+                        className="h-[2.2rem] md:h-[3.5rem] px-[clamp(1rem,6vw,1.5rem)] rounded-md flex items-center justify-center bg-gray-200 text-[clamp(1rem,2vw,1.4rem)] font-[500] font-bold transiton-colors duration-300 ease-in-out hover:bg-acc hover:text-chip hover:shadow-xl"
                         variants={fadeLeft}
                         initial={"hidden"}
                         animate={"show"}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                     >
                         Download CV
                         <span className="ml-2"><RiFileDownloadLine className="text-[clamp(1rem,2vw,1.875rem)]" /></span>
