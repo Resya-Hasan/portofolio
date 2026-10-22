@@ -21,8 +21,8 @@ const ServiceCard = ({
         style={style}
             className={`border border-line rounded-md w-full h-auto flex flex-col p-4 gap-4 ${className ?? ""}`}
         >
-            <div className="self-start bg-gray-200 p-2 rounded-lg">
-                <Icon size={29} strokeWidth={1.4} />
+            <div className="self-start  p-2 rounded-lg bg-acc text-bg">
+                <Icon size={29} strokeWidth={1.7} />
             </div>
             <h2 className="text-md lg:text-xl font-bold">{title}</h2>
             <p className="text-base">{description}</p>

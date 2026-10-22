@@ -36,12 +36,12 @@ const Navbar = () => {
                     <span>Available for hire</span>
                 </div>
                 <div className="hidden lg:flex gap-14 text-base">
-                    <a href="#services" className="hover:text-acc">Services</a>
-                    <a href="#projects" className="hover:text-acc">Projects</a>
-                    <a href="#experience" className="hover:text-acc">Experience</a>
-                    <a href="#skills" className="hover:text-acc">Skills</a>
-                    <a href="#aboutMe" className="hover:text-acc">About Me</a>
-                    <a href="#contact" className="hover:text-acc">Contact</a>
+                    <a href="#services" className="transition-colors duration-300 ease-in-out hover:text-acc">Services</a>
+                    <a href="#projects" className="transition-colors duration-300 ease-in-out hover:text-acc">Projects</a>
+                    <a href="#experience" className="transition-colors duration-300 ease-in-out hover:text-acc">Experience</a>
+                    <a href="#skills" className="transition-colors duration-300 ease-in-out hover:text-acc">Skills</a>
+                    <a href="#aboutMe" className="transition-colors duration-300 ease-in-out hover:text-acc">About Me</a>
+                    <a href="#contact" className="transition-colors duration-300 ease-in-out hover:text-acc">Contact</a>
                 </div>
                 <button
                     onClick={() => setIsOpen(!isOpen)}
